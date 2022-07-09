@@ -1,0 +1,4 @@
+/* Enter your custom styles here */
+.sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border: .0625rem solid #d9d9d9;
+}

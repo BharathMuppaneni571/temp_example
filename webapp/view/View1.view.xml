@@ -1,0 +1,27 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="com.bharath.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content />
+        <Panel width="50%">
+        <table:Table
+        id="idTable"
+				rows="{model>/}"
+				selectionMode="Single"
+				visibleRowCount="7"
+                rowSelectionChange="selectionChanged"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<table:columns>
+					<table:Column width="6rem" hAlign="Center">
+						<Label text="Status" />
+						<table:template>
+							<Switch state="{path: 'model>status', formatter: '.formatter.status'}" change="switchChange"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+            <Button text="Download" press="onDownload"/>
+        </Panel>
+    </Page>
+</mvc:View>
